@@ -44,7 +44,7 @@ First, Convert the FASTA and FASTQ data files for the viral and bacterial commun
     python ./Preprocessing/FASTQ_CSV.py
 ```
 this will generate the CSV files in the Processed_data folder
-Second, run the K-mer builder/ PCA model:
+Second, run the K-mer builder/ PCA model (default Kmer size is 3, can be changed on the functional call):
 ```html
     python PCA_of_Kmer_Frequency.py
 ```
@@ -59,6 +59,7 @@ Next, if you would like to validate the PCA manual implementation, please run th
 ---
 
 ## Unit Test
+All our Unit tests are implemented in the following script:
 ```html
     python ./Tests/Method_Uint_tests.py
 ```
@@ -67,9 +68,9 @@ Next, if you would like to validate the PCA manual implementation, please run th
 
 ---
 
-## Author Info
+## Example:
 
-- Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
-- Website - [James Q Quick](https://jamesqquick.com)
+We used our model on 2 main datasets, one representing the bacterial community and another representing the Viral SARS-Cov2, the size of K-mers selected was 3 to measure their frequencies in the genomes and apply the PCA. the following graph represent the first 2 PCs, discriminating the 2 communities:  
+![output](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/pca_sklearn.png)
 
 [Back To The Top](#read-me-template)
