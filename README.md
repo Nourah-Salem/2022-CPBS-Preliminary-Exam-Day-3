@@ -44,11 +44,25 @@ First, Convert the FASTA and FASTQ data files for the viral and bacterial commun
     python ./Preprocessing/FASTQ_CSV.py
 ```
 this will generate the CSV files in the Processed_data folder
+Second, run the K-mer builder/ PCA model:
+```html
+    python PCA_of_Kmer_Frequency.py
+```
+This will generate the PCs for the 2 communities and save them in the Output folder.
+Next, if you would like to validate the PCA manual implementation, please run the Sklearn PCA:
+```html
+    python PCA_Sklearn.py
+```
+
 [Back To The Top](#read-me-template)
 
 ---
 
-## References
+## Unit Test
+```html
+    python ./Tests/Method_Uint_tests.py
+```
+
 [Back To The Top](#read-me-template)
 
 ---
