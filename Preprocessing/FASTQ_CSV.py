@@ -36,5 +36,5 @@ def FASTA2DF (file):
 
         
 if __name__ == "__main__":
-    df = FASTA2DF("./Raw_Data/sample_data.fastq")    
-    df.to_csv("./Processed_data/data_Viral.csv")
+    df = FASTA2DF("./Raw_Data/SARS_Cov2_data.fastq")    
+    df.to_csv("./Processed_data/SARS_Cov2_data.csv")
