@@ -26,7 +26,7 @@ def count_kmers(read, k):
     return counts
 
 
-df_0 = df2[:1529]
+df_0 = df1
 df_1 = df2
 
 
