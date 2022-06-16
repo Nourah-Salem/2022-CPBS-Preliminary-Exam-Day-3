@@ -36,10 +36,14 @@ In order to run all the scripts (including the validation one), please make sure
 
 
 #### Steps to run the scripts:
-
+First, Convert the FASTA and FASTQ data files for the viral and bacterial communities (repectively) to CSVs:   
 ```html
-    <p>dummy code</p>
+    python ./Preprocessing/FASTA_CSV.py
 ```
+```html
+    python ./Preprocessing/FASTQ_CSV.py
+```
+this will generate the CSV files in the Processed_data folder
 [Back To The Top](#read-me-template)
 
 ---
