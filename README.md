@@ -17,10 +17,10 @@
 ![A workflow diagram.](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/2022-CPBS-Preliminary-Exam-Day-3%20workflow.png)
 
 A workflow diagram, representing the steps for solving our problem, starting with data collection and preparation, followed by generating  our clustering feature, which is k-mer frequency, followed by using our clustering method, which is the principal component analysis (PCA).
-#### Technologies
+#### Main Concepts Implemented 
 
-- Technology 1
-- Technology 2
+- Normalised freqeuncy of k-mers
+- Principal Components Analysis (PCA)
 
 [Back To The Top](#read-me-template)
 
@@ -29,7 +29,10 @@ A workflow diagram, representing the steps for solving our problem, starting wit
 ## How To Use
 
 #### Installation
-
+In order to run all the scripts (including the validation one), please make sure the following packages are installed:
+1. Pandas
+2. Seaborn
+3. sklearn (optional, in case of reuning the validation method)
 
 
 #### API Reference
