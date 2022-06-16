@@ -17,10 +17,18 @@
 ![A workflow diagram.](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/2022-CPBS-Preliminary-Exam-Day-3%20workflow.png)
 
 A workflow diagram, representing the steps for solving our problem, starting with data collection and preparation, followed by generating  our clustering feature, which is k-mer frequency, followed by using our clustering method, which is the principal component analysis (PCA).
+
 #### Main Concepts Implemented 
 
 - Normalised freqeuncy of k-mers
 - Principal Components Analysis (PCA)
+
+
+#### Model Inputs 
+1. One FASTA file for bacterial metagenomic 500 samples
+2. One FASTQ file for viral (SARS-CoV2) metagenomic 500 samples
+#### Model Onputs
+A graph represnting the clusters of both communities on the top to principal components
 
 [Back To The Top](#read-me-template)
 
@@ -83,4 +91,5 @@ All our Unit tests are implemented in the following script:
 We used our model on 2 main datasets, one representing the bacterial community and another representing the Viral SARS-Cov2, the size of K-mers selected was 3 to measure their frequencies in the genomes and apply the PCA. the following graph represent the first 2 PCs, discriminating the 2 communities:  
 ![output](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/pca_sklearn.png)
 (we have done the same experiemnt but with different sizes of the kmers and they showed different behavior, results on them and discussion are presented in the report)
+
 [Back To The Top](#read-me-template)
