@@ -72,8 +72,6 @@ Next, if you would like to validate the PCA manual implementation, please run th
     python PCA_Sklearn.py
 ```
 
-[Back To The Top](#read-me-template)
-
 ---
 
 ## Unit Test
@@ -81,8 +79,6 @@ All our Unit tests are implemented in the following script:
 ```html
     python ./Tests/Method_Uint_tests.py
 ```
-
-[Back To The Top](#read-me-template)
 
 ---
 
@@ -92,4 +88,3 @@ We used our model on 2 main datasets, one representing the bacterial community a
 ![output](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/pca_sklearn.png)
 (we have done the same experiemnt but with different sizes of the kmers and they showed different behavior, results on them and discussion are presented in the report)
 
-[Back To The Top](#read-me-template)
