@@ -35,7 +35,7 @@ In order to run all the scripts (including the validation one), please make sure
 3. sklearn (optional, in case of reuning the validation method)
 
 
-#### API Reference
+#### Steps to run the scripts:
 
 ```html
     <p>dummy code</p>
