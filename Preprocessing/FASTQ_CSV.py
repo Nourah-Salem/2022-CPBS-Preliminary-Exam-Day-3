@@ -4,7 +4,7 @@ import pandas as pd
 
 def FASTA2DF (file):
     # The function takes the FASTQ file, convert it 3-column dataframe (one for the ID, one for the read and the length of the read)
-    
+    print ("Running file conversion")
     # open file and iterate through the lines, composing each single line as we go
     id_lines = []
     seq_lines = []
@@ -38,3 +38,4 @@ def FASTA2DF (file):
 if __name__ == "__main__":
     df = FASTA2DF("./Raw_Data/SARS_Cov2_data.fastq")    
     df.to_csv("./Processed_data/SARS_Cov2_data.csv")
+    print ("file coverted and saved")
