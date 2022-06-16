@@ -14,8 +14,9 @@
 
 ## Description
 
-![A workflow diagram, representing the steps for solving our problem, starting with data collection and preparation, followed by generating  our clustering feature, which is k-mer frequency, followed by using our clustering method, which is the principal component analysis (PCA).](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/2022-CPBS-Preliminary-Exam-Day-3%20workflow.png)
+![A workflow diagram.](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/2022-CPBS-Preliminary-Exam-Day-3%20workflow.png)
 
+A workflow diagram, representing the steps for solving our problem, starting with data collection and preparation, followed by generating  our clustering feature, which is k-mer frequency, followed by using our clustering method, which is the principal component analysis (PCA).
 #### Technologies
 
 - Technology 1
