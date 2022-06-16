@@ -30,7 +30,6 @@ A workflow diagram, representing the steps for solving our problem, starting wit
 #### Model Onputs
 A graph represnting the clusters of both communities on the top two principal components
 
-[Back To The Top](#read-me-template)
 
 ---
 
