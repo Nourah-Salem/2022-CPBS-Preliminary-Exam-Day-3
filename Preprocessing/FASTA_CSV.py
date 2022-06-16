@@ -4,7 +4,7 @@ import pandas as pd
 
 def FASTA2DF (file):
     # The function takes the FASTA file, convert it to 3-column dataframe (one for the ID, one for the read and the length of the read)
-    
+    print ("Running file conversion")
     # open file and iterate through the lines, composing each single line as we go
     id_lines = []
     seq_lines = []
@@ -41,3 +41,4 @@ if __name__ == "__main__":
     df = df.sort_values(by='id')
     df.reset_index(drop=True, inplace=True)    
     df.to_csv("./Processed_data/bacterial_data.csv")
+    print ("file coverted and saved")
