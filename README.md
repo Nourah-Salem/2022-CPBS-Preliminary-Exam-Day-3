@@ -32,7 +32,7 @@ A workflow diagram, representing the steps for solving our problem, starting wit
 In order to run all the scripts (including the validation one), please make sure the following packages are installed:
 1. Pandas
 2. Seaborn
-3. sklearn (optional, in case of reuning the validation method)
+3. sklearn (optional, in case of runing the validation method)
 
 
 #### Steps to run the scripts:
