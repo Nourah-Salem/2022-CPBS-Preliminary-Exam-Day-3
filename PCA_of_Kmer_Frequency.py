@@ -19,17 +19,10 @@ def count_kmers(read, k):
     k : int
         The value of k for which to count kmers.
 
-    Returns
-    -------
-    counts : dictionary, {'string': int}
-        A dictionary of counts keyed by their individual kmers (strings
+    this will returns a dictionary of counts keyed by their individual kmers (strings
         of length k).
-
-    Examples
-    --------
-    >>> count_kmers("GATGAT", 3)
-    {'ATG': 1, 'GAT': 2, 'TGA': 1}
     """
+    
     # Start with an empty dictionary
     counts = {}
     # Calculate how many kmers of length k there are
