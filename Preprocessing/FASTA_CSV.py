@@ -1,4 +1,4 @@
-''' Coverting the list of reads for the bacterial genome from the FASTA format to the FASTQ format'''
+
 
 import pandas as pd
 
@@ -37,7 +37,7 @@ def FASTA2DF (file):
         
 if __name__ == "__main__":
     
-    df = FASTA2DF("./Raw_Data/data.fasta")
+    df = FASTA2DF("./Raw_Data/bacterial_data.fasta")
     df = df.sort_values(by='id')
     df.reset_index(drop=True, inplace=True)    
-    df.to_csv("./Processed_data/data_bacteria.csv")
+    df.to_csv("./Processed_data/bacterial_data.csv")
