@@ -3,7 +3,7 @@
 import pandas as pd
 
 def FASTA2DF (file):
-    # The function takes the FASTA file, convert it 2-column dataframe (one for the ID, one for the read)
+    # The function takes the FASTQ file, convert it 3-column dataframe (one for the ID, one for the read and the length of the read)
     
     # open file and iterate through the lines, composing each single line as we go
     id_lines = []
