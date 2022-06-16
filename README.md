@@ -1,7 +1,7 @@
 # Using Principal Component Analysis (PCA) for Clustering of Metagenomic Sequences
 
 
-> The objective of this project is to develop a general computational method for characterizing the viral communities in a metagenomic sample inhabiting a certain environment. Our aim is to computationally be able to classify metagenomic DNA sequences into their family groups accurately through finding the optimum size of K-mers to help us calculate the Principal Components Analysis (PCA) for the normalized frequencies of the K-mers. for mode details, please check the report project.
+> The objective of this project is to develop a simple general computational method for characterizing the viral communities in a metagenomic sample inhabiting a certain environment. Our aim is to computationally be able to cluster metagenomic DNA sequences into their family groups accurately through finding the optimum size of K-mers that are ferquent enough to represent a certain taxonomy to calculate the Principal Components Analysis (PCA) to be able to visualize the similarities and differences between these communities. for mode details, please check the report project.
 
 ---
 
