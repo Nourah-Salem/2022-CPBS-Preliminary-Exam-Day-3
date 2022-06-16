@@ -1,6 +1,11 @@
 import numpy as np
 import pandas as pd
 
+'''theis script takes each DNA seq, cut it into Kmers with the size that the user choses
+after cutting the Kmers, the frequency of each kmer across the genome is calculated and normalized.
+Next, we calculated the PCA for 2 genomes through calculating the covariance to get the eigen_values and eigen_vectors and then calculate the PCA 
+'''
+
 df1 = pd.read_csv('./Processed_data/SARS_Cov2_data.csv')
 df2 = pd.read_csv('./Processed_data/bacterial_data.csv')
 
@@ -42,13 +47,17 @@ def count_kmers(read, k):
     return counts
 
 
+# we took a 500 sequences from each community to make equal length columns
 df_0 = df1[:500]
 df_1 = df2[:500]
 
+# create the label for each community to assign them in the PCA
 label_vec = ["SARS Cov2"]*25
 label_vec = label_vec + ["Escherichia coli"]*25
 
 
+# additional processing of the sequences before cutting the kmers:
+# Kmer for the viral community
 allkmer_0 = []
 for i in df_0['read']:
     allkmer_0.append(i)
@@ -62,7 +71,7 @@ allkmer_0  = allkmer_0[2:] +  allkmer_0[:-2]
 
 kmer_0= count_kmers(allkmer_0,3)
 
-
+#Kmer for the baterial comuity 
 allkmer_1 = []
 for i in df_1['read']:
     allkmer_1.append(i)
@@ -82,6 +91,7 @@ Normalised freqeuncy of kᵢ
 = Number of occurrences of kᵢ / total number of k-mers
 (where kᵢ is the iᵗʰ k-mer)'''
 
+# applied of the SARS-CoV2
 sum_kmers0 = 0
 for index, key in enumerate (kmer_0):
     sum_kmers0 = sum_kmers0+kmer_0[key]
@@ -92,7 +102,7 @@ for index, key in enumerate (kmer_0):
     Norm_f_kmer0.append(kmer_0[key]/sum_kmers0)
     
 
-
+# applied on the bacterial community
 sum_kmers1 = 0
 for index, key in enumerate (kmer_1):
     sum_kmers1 = sum_kmers1+kmer_1[key]
@@ -103,16 +113,14 @@ for index, key in enumerate (kmer_1):
     Norm_f_kmer1.append(kmer_1[key]/sum_kmers1)
     
 
-
+# selecting the kmers that has the highest frequency to represent each community
 Norm_f_kmer0.sort(reverse=True)
 Norm_f_kmer1.sort(reverse=True)
-
-
 sample_0 =  Norm_f_kmer0[:50]
 sample_1 =  Norm_f_kmer1[:50]
 
     
-#Generate a dummy dataset.
+#combine the 2 comunities into one array.
 X = np.column_stack([sample_0, sample_1])
 
 
@@ -121,6 +129,7 @@ import seaborn as sb
 import matplotlib.pyplot as plt
 import pandas as pd
  
+''' we wrote steps of the PCA as follows'''
 def PCA(X , num_components):
      
     #Step-1
@@ -151,12 +160,7 @@ X_reduced = PCA(X , 2)
 
 #Creating a Pandas DataFrame of reduced Dataset
 principal_df = pd.DataFrame(X_reduced , columns = ['PC1','PC2'])
- 
-#Concat it with target variable to create a complete Dataset
-# principal_df = pd.concat([principal_df , pd.DataFrame(target)] , axis = 1)
-
-
- 
+  
 plt.figure(figsize = (6,6))
 sb.scatterplot(data = principal_df , x = 'PC1',y = 'PC2' , s = 60 , hue = label_vec , palette= ['blue','red'])
 
