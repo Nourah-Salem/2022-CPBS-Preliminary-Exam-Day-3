@@ -111,5 +111,5 @@ pca = PCA(n_components=2)
 embedded = pca.fit_transform(X)
 
 fig = plt.figure(figsize=(10, 5))
-sns.scatterplot(embedded[:,0], embedded[:,1], alpha=1, s=100, palette=['blue','red', 'green']).plot()   
-plt.savefig('pca_pa_sa_ec.png', format="png", dpi = 300, bbox_inches='tight')
+sns.scatterplot(embedded[:,0], embedded[:,1],s = 60 , hue = label_vec , palette= ['blue','red']).plot()   
+plt.savefig('./Output/pca_sklearn.png', format="png", dpi = 300, bbox_inches='tight')
