@@ -161,6 +161,7 @@ X_reduced = PCA(X , 2)
 #Creating a Pandas DataFrame of reduced Dataset
 principal_df = pd.DataFrame(X_reduced , columns = ['PC1','PC2'])
   
-plt.figure(figsize = (6,6))
+plt.figure(figsize = (10,5))
 sb.scatterplot(data = principal_df , x = 'PC1',y = 'PC2' , s = 60 , hue = label_vec , palette= ['blue','red'])
+plt.savefig('./Output/SARS-CoV2 Vs Bacterial Community With 14 Kmer.png', format="png", dpi = 300, bbox_inches='tight')
 
