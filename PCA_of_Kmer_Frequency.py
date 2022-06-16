@@ -10,6 +10,7 @@ df1 = pd.read_csv('./Processed_data/SARS_Cov2_data.csv')
 df2 = pd.read_csv('./Processed_data/bacterial_data.csv')
 
 def count_kmers(read, k):
+    print ("Cutting the K-mers")
     """Count kmer occurrences in a given read.
 
     Parameters
@@ -111,7 +112,7 @@ Norm_f_kmer0.sort(reverse=True)
 Norm_f_kmer1.sort(reverse=True)
 sample_0 =  Norm_f_kmer0[:50]
 sample_1 =  Norm_f_kmer1[:50]
-
+print ("Normalized K-mers are ready for analysis")
     
 #combine the 2 comunities into one array.
 X = np.column_stack([sample_0, sample_1])
@@ -124,7 +125,7 @@ import pandas as pd
  
 ''' we wrote steps of the PCA as follows'''
 def PCA(X , num_components):
-     
+    print ("Running PCA") 
     #Step-1
     X_meaned = X - np.mean(X , axis = 0)
      
@@ -157,4 +158,5 @@ principal_df = pd.DataFrame(X_reduced , columns = ['PC1','PC2'])
 plt.figure(figsize = (10,5))
 sb.scatterplot(data = principal_df , x = 'PC1',y = 'PC2' , s = 60 , hue = label_vec , palette= ['blue','red'])
 plt.savefig('./Output/SARS-CoV2 Vs Bacterial Community With 14 Kmer.png', format="png", dpi = 300, bbox_inches='tight')
+print ("PCA done and image saved in the Output file")
 
