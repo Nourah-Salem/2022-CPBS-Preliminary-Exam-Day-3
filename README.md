@@ -28,7 +28,7 @@ A workflow diagram, representing the steps for solving our problem, starting wit
 1. One FASTA file for bacterial metagenomic 500 samples
 2. One FASTQ file for viral (SARS-CoV2) metagenomic 500 samples
 #### Model Onputs
-A graph represnting the clusters of both communities on the top to principal components
+A graph represnting the clusters of both communities on the top two principal components
 
 [Back To The Top](#read-me-template)
 
