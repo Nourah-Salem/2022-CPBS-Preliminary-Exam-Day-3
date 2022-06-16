@@ -1,4 +1,4 @@
-# Read Me Template
+# Using Principal Component Analysis (PCA) for Clustering of Metagenomic Sequences
 
 ![Project Image](project-image-url)
 
