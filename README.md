@@ -36,7 +36,8 @@ In order to run all the scripts (including the validation one), please make sure
 
 
 #### Steps to run the scripts:
-First, Convert the FASTA and FASTQ data files for the viral and bacterial communities (repectively) to CSVs:   
+First, please clone the repository directly from GitHub
+Second, Convert the FASTA and FASTQ data files for the viral and bacterial communities (repectively) to CSVs:   
 ```html
     python ./Preprocessing/FASTA_CSV.py
 ```
@@ -44,7 +45,7 @@ First, Convert the FASTA and FASTQ data files for the viral and bacterial commun
     python ./Preprocessing/FASTQ_CSV.py
 ```
 this will generate the CSV files in the Processed_data folder
-Second, run the K-mer builder/ PCA model (default Kmer size is 3, can be changed on the functional call):
+third, run the K-mer builder/ PCA model (default Kmer size is 3, can be changed on the functional call):
 ```html
     python PCA_of_Kmer_Frequency.py
 ```
