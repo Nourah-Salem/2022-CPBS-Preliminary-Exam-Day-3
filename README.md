@@ -53,7 +53,8 @@ In order to run all the scripts (including the validation one), please make sure
 
 #### Steps to run the scripts:
 First, please clone the repository directly from GitHub and make sure that you're in the project directory
-Second, Convert the FASTA and FASTQ data files for the viral and bacterial communities (repectively) to CSVs:   
+Second, Convert the FASTA and FASTQ data files for the viral and bacterial communities (repectively) to CSVs: 
+(note that you might need to use "run" instead of "python" in some IDEs)
 ```html
     python ./Preprocessing/FASTA_CSV.py
 ```
