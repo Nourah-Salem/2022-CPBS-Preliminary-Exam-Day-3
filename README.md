@@ -36,7 +36,7 @@ In order to run all the scripts (including the validation one), please make sure
 
 
 #### Steps to run the scripts:
-First, please clone the repository directly from GitHub
+First, please clone the repository directly from GitHub and make sure that you're in the project directory
 Second, Convert the FASTA and FASTQ data files for the viral and bacterial communities (repectively) to CSVs:   
 ```html
     python ./Preprocessing/FASTA_CSV.py
@@ -73,5 +73,5 @@ All our Unit tests are implemented in the following script:
 
 We used our model on 2 main datasets, one representing the bacterial community and another representing the Viral SARS-Cov2, the size of K-mers selected was 3 to measure their frequencies in the genomes and apply the PCA. the following graph represent the first 2 PCs, discriminating the 2 communities:  
 ![output](https://github.com/Nourah-Salem/2022-CPBS-Preliminary-Exam-Day-3/blob/main/Images/pca_sklearn.png)
-
+(we have done the same experiemnt but with different sizes of the kmers and they showed different behavior, results on them and discussion are presented in the report)
 [Back To The Top](#read-me-template)
