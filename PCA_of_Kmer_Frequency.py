@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-df1 = pd.read_csv('D:/PhD at Anschutz/semester2/7712/prelim/data1.csv')
-df2 = pd.read_csv('D:/PhD at Anschutz/semester2/7712/prelim/data2.csv')
+df1 = pd.read_csv('./Processed_data/SARS_Cov2_data.csv')
+df2 = pd.read_csv('./Processed_data/bacterial_data.csv')
 
 def count_kmers(read, k):
     """Count kmer occurrences in a given read.
@@ -42,9 +42,11 @@ def count_kmers(read, k):
     return counts
 
 
-df_0 = df2[:1529]
-df_1 = df2
-df_2 = df1[:500]
+df_0 = df1[:500]
+df_1 = df2[:500]
+
+label_vec = ["SARS Cov2"]*25
+label_vec = label_vec + ["Escherichia coli"]*25
 
 
 allkmer_0 = []
@@ -58,9 +60,7 @@ allkmer_0 =allkmer_0.replace("[","")
 allkmer_0 =allkmer_0.replace("]","")
 allkmer_0  = allkmer_0[2:] +  allkmer_0[:-2] 
 
-kmer_0= count_kmers(allkmer_0,8)
-
-
+kmer_0= count_kmers(allkmer_0,3)
 
 
 allkmer_1 = []
@@ -77,21 +77,6 @@ allkmer_1  = allkmer_1[2:] +  allkmer_1[:-2]
 kmer_1= count_kmers(allkmer_1,3)
 
 
-
-allkmer_2 = []
-for i in df_2['read']:
-    allkmer_2.append(i)
-allkmer_2 =str(allkmer_2)
-allkmer_2 =allkmer_2.replace(",","")
-allkmer_2 =allkmer_2.replace(" ","")
-allkmer_2 =allkmer_2.replace("'","")
-allkmer_2 =allkmer_2.replace("[","")
-allkmer_2 =allkmer_2.replace("]","")
-allkmer_2  = allkmer_2[2:] +  allkmer_2[:-2] 
-
-kmer_2= count_kmers(allkmer_2,8)
-
-
 '''
 Normalised freqeuncy of kᵢ
 = Number of occurrences of kᵢ / total number of k-mers
@@ -105,6 +90,7 @@ for index, key in enumerate (kmer_0):
 Norm_f_kmer0 = []
 for index, key in enumerate (kmer_0):
     Norm_f_kmer0.append(kmer_0[key]/sum_kmers0)
+    
 
 
 sum_kmers1 = 0
@@ -117,28 +103,17 @@ for index, key in enumerate (kmer_1):
     Norm_f_kmer1.append(kmer_1[key]/sum_kmers1)
     
 
-sum_kmers2 = 0
-for index, key in enumerate (kmer_2):
-    sum_kmers2 = sum_kmers2+kmer_2[key]
-    
-    
-Norm_f_kmer2 = []
-for index, key in enumerate (kmer_2):
-    Norm_f_kmer2.append(kmer_2[key]/sum_kmers2)
-
-    
 
 Norm_f_kmer0.sort(reverse=True)
 Norm_f_kmer1.sort(reverse=True)
-Norm_f_kmer2.sort(reverse=True)
 
-sample100_0 =  Norm_f_kmer0[:50]
-sample100_1 =  Norm_f_kmer1[:50]
-sample100_2 =  Norm_f_kmer2[:50]
+
+sample_0 =  Norm_f_kmer0[:50]
+sample_1 =  Norm_f_kmer1[:50]
 
     
 #Generate a dummy dataset.
-X = np.column_stack([sample100_0, sample100_1,sample100_2])
+X = np.column_stack([sample_0, sample_1])
 
 
 import numpy as np
@@ -171,11 +146,11 @@ def PCA(X , num_components):
     return X_reduced
 
 
-X_reduced = PCA(X , 3)
+X_reduced = PCA(X , 2)
 
 
 #Creating a Pandas DataFrame of reduced Dataset
-principal_df = pd.DataFrame(X_reduced , columns = ['PC1','PC2','PC3'])
+principal_df = pd.DataFrame(X_reduced , columns = ['PC1','PC2'])
  
 #Concat it with target variable to create a complete Dataset
 # principal_df = pd.concat([principal_df , pd.DataFrame(target)] , axis = 1)
@@ -183,5 +158,5 @@ principal_df = pd.DataFrame(X_reduced , columns = ['PC1','PC2','PC3'])
 
  
 plt.figure(figsize = (6,6))
-sb.scatterplot(data = principal_df , x = 'PC2',y = 'PC3' , s = 60 , palette= ['blue','red', 'green'])
+sb.scatterplot(data = principal_df , x = 'PC1',y = 'PC2' , s = 60 , hue = label_vec , palette= ['blue','red'])
 
