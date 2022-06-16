@@ -31,9 +31,18 @@ A workflow diagram, representing the steps for solving our problem, starting wit
 #### Installation
 In order to run all the scripts (including the validation one), please make sure the following packages are installed:
 1. Pandas
+```html
+    conda install -c anaconda pandas
+```
 2. Seaborn
-3. sklearn (optional, in case of runing the validation method)
 
+```html
+    conda install -c anaconda seaborn
+```
+3. sklearn (optional, in case of runing the validation method)
+```html
+    conda install -c anaconda scikit-learn
+```
 
 #### Steps to run the scripts:
 First, please clone the repository directly from GitHub and make sure that you're in the project directory
